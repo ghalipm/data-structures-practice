@@ -107,6 +107,7 @@ public class Chars2Document {
         return charMap;
     }
 
+    //list method
     private static boolean generateDoc3(String source, String document) {
 
         List<Character> sourceList = stringToArrayList(source);
