@@ -12,8 +12,8 @@ public class Chars2Document {
         //  String chars = "!veDJaCyd vaeo perelo xw"; // 2as ('a',2) --> ('a', 1) --> ('a',0)
         //  String document = "Cydeo Java Developer!";
 
-        String chars = "a b c c 1 2 3 4 5 6 0 ";
-        String document = "cba0  12345$           ";
+        String chars = "a b c c 1 2 3 4 5 6 0c ";
+        String document = "ccba0c  12345           ";
 
         System.out.println(generateDoc3(chars, document));
     }
@@ -109,20 +109,15 @@ public class Chars2Document {
 
     //list method
     private static boolean generateDoc3(String source, String document) {
-
-        List<Character> sourceList = stringToArrayList(source);
-        List<Character> docList = stringToArrayList(document);
-
-        return sourceList.containsAll(docList);
+        // source list contains document list?
+        return stringToArrayList(source).containsAll(stringToArrayList(document));
     }
 
     private static ArrayList<Character> stringToArrayList(String str) {
-
         ArrayList<Character> list = new ArrayList<>();
         for (char c : str.toCharArray()) {
             list.add(c);
         }
-
         return list;
     }
 
